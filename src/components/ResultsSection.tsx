@@ -33,7 +33,7 @@ const ResultsSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="results" className="section-padding bg-sand/30">
+    <section id="results" className="section-padding bg-sand/40">
       <div className="container-wide px-4 md:px-8" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -41,19 +41,19 @@ const ResultsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block font-body text-xs tracking-[0.2em] text-taupe uppercase mb-3">
+          <span className="inline-block font-body text-sm tracking-[0.15em] text-warm-brown uppercase mb-4">
             Что вы получите
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-deep-brown">
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-deep-brown">
             Результаты нашей работы
           </h2>
-          <p className="font-body text-muted-foreground mt-4 max-w-2xl mx-auto text-sm">
+          <p className="font-body text-lg md:text-xl text-foreground/80 mt-6 max-w-2xl mx-auto">
             Наша совместная работа будет направлена на развитие новых навыков и внутренней позиции
           </p>
-          <div className="divider-elegant mt-6" />
+          <div className="divider-elegant mt-8" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {results.map((result, index) => (
             <motion.div
               key={index}
@@ -62,19 +62,19 @@ const ResultsSection = () => {
               transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
               className="group"
             >
-              <div className="h-full bg-card p-8 border border-border/50 hover:border-taupe/40 transition-all duration-300 relative overflow-hidden">
+              <div className="h-full bg-card p-8 md:p-10 border border-border hover:border-taupe/50 transition-all duration-300 relative overflow-hidden">
                 {/* Number decoration */}
-                <div className="absolute top-4 right-4 font-display text-6xl text-taupe/10 leading-none">
+                <div className="absolute top-4 right-4 font-display text-7xl text-taupe/15 leading-none">
                   {String(index + 1).padStart(2, '0')}
                 </div>
                 
                 {/* Content */}
                 <div className="relative">
-                  <div className="w-8 h-px bg-olive mb-6 group-hover:w-12 transition-all duration-300" />
-                  <h3 className="font-display text-xl text-deep-brown mb-3">
+                  <div className="w-10 h-px bg-olive mb-8 group-hover:w-14 transition-all duration-300" />
+                  <h3 className="font-display text-2xl text-deep-brown mb-4">
                     {result.title}
                   </h3>
-                  <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                  <p className="font-body text-base md:text-lg text-foreground/80 leading-relaxed">
                     {result.description}
                   </p>
                 </div>
