@@ -29,23 +29,22 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-cream/95 backdrop-blur-md shadow-soft py-3"
-          : "bg-transparent py-5"
+          ? "bg-background/95 backdrop-blur-md shadow-soft py-3"
+          : "bg-transparent py-4"
       }`}
     >
       <div className="container-wide px-4 md:px-8">
         <div className="flex items-center justify-between">
-          <a href="#" className="font-display text-xl md:text-2xl font-semibold text-deep-brown">
+          <a href="#" className="font-display text-xl md:text-2xl font-medium text-deep-brown">
             Олег Петрович
           </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className="hidden lg:flex items-center gap-8">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="font-body text-sm text-foreground/80 hover:text-warm-brown transition-colors duration-200"
+                className="font-body text-xs tracking-wide text-foreground/70 hover:text-deep-brown transition-colors duration-200 uppercase"
               >
                 {item.label}
               </a>
@@ -54,12 +53,11 @@ const Header = () => {
 
           <a
             href="#contacts"
-            className="hidden md:inline-flex px-5 py-2.5 bg-warm-brown text-primary-foreground font-body text-sm rounded-lg hover:bg-deep-brown transition-colors duration-200"
+            className="hidden md:inline-flex px-6 py-2.5 bg-deep-brown text-primary-foreground font-body text-xs tracking-wide uppercase hover:bg-warm-brown transition-colors duration-200"
           >
             Записаться
           </a>
 
-          {/* Mobile Menu Button */}
           <button
             className="lg:hidden p-2 text-foreground"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -69,7 +67,6 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.nav
@@ -84,7 +81,7 @@ const Header = () => {
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="font-body text-base text-foreground/80 hover:text-warm-brown transition-colors duration-200 py-2"
+                    className="font-body text-sm text-foreground/80 hover:text-deep-brown transition-colors duration-200 py-2"
                   >
                     {item.label}
                   </a>
@@ -92,7 +89,7 @@ const Header = () => {
                 <a
                   href="#contacts"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="mt-2 px-5 py-3 bg-warm-brown text-primary-foreground font-body text-sm rounded-lg text-center hover:bg-deep-brown transition-colors duration-200"
+                  className="mt-2 px-5 py-3 bg-deep-brown text-primary-foreground font-body text-sm text-center hover:bg-warm-brown transition-colors duration-200"
                 >
                   Записаться
                 </a>

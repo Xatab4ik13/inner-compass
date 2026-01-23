@@ -1,63 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Design System for Psychologist Website - Warm Beige Palette */
+/* Design System for Psychologist Website - Olive Beige Palette inspired by psy-va.ru */
 
 @layer base {
   :root {
-    /* Main beige/cream palette */
-    --background: 40 33% 96%;
-    --foreground: 30 20% 20%;
+    /* Neutral olive-beige palette */
+    --background: 45 20% 95%;
+    --foreground: 40 10% 20%;
 
-    --card: 40 40% 97%;
-    --card-foreground: 30 20% 20%;
+    --card: 48 25% 97%;
+    --card-foreground: 40 10% 20%;
 
-    --popover: 40 40% 97%;
-    --popover-foreground: 30 20% 20%;
+    --popover: 48 25% 97%;
+    --popover-foreground: 40 10% 20%;
 
-    /* Warm brown primary */
-    --primary: 30 30% 35%;
-    --primary-foreground: 40 40% 97%;
+    /* Muted olive-brown primary */
+    --primary: 45 15% 35%;
+    --primary-foreground: 48 30% 97%;
 
-    /* Soft cream secondary */
-    --secondary: 38 35% 90%;
-    --secondary-foreground: 30 25% 25%;
+    /* Soft beige secondary */
+    --secondary: 45 20% 90%;
+    --secondary-foreground: 40 15% 25%;
 
-    /* Muted warm tones */
-    --muted: 35 25% 92%;
-    --muted-foreground: 30 15% 45%;
+    /* Muted olive tones */
+    --muted: 48 15% 92%;
+    --muted-foreground: 40 10% 50%;
 
-    /* Warm accent */
-    --accent: 32 40% 85%;
-    --accent-foreground: 30 25% 20%;
+    /* Warm beige accent */
+    --accent: 42 25% 88%;
+    --accent-foreground: 40 15% 22%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 35 25% 85%;
-    --input: 35 25% 88%;
-    --ring: 30 30% 45%;
+    --border: 45 15% 85%;
+    --input: 45 15% 88%;
+    --ring: 45 20% 45%;
 
     --radius: 0.5rem;
 
-    /* Custom psychology theme colors */
-    --cream: 40 45% 95%;
-    --sand: 35 35% 88%;
-    --taupe: 30 20% 70%;
-    --warm-brown: 25 35% 40%;
-    --deep-brown: 25 30% 25%;
+    /* Custom psychology theme colors - psy-va.ru inspired */
+    --cream: 48 30% 96%;
+    --sand: 45 22% 88%;
+    --taupe: 40 12% 65%;
+    --olive: 50 15% 45%;
+    --warm-brown: 38 18% 38%;
+    --deep-brown: 35 15% 22%;
 
     /* Typography */
-    --font-display: 'Playfair Display', Georgia, serif;
-    --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Raleway', 'Segoe UI', sans-serif;
 
     /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(30 20% 20% / 0.08);
-    --shadow-card: 0 8px 30px -8px hsl(30 20% 20% / 0.12);
-    --shadow-elevated: 0 20px 50px -15px hsl(30 20% 20% / 0.15);
+    --shadow-soft: 0 4px 20px -4px hsl(40 10% 20% / 0.06);
+    --shadow-card: 0 8px 30px -8px hsl(40 10% 20% / 0.1);
+    --shadow-elevated: 0 20px 50px -15px hsl(40 10% 20% / 0.12);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -70,39 +71,40 @@
   }
 
   .dark {
-    --background: 30 15% 12%;
-    --foreground: 40 30% 92%;
+    --background: 40 10% 10%;
+    --foreground: 45 25% 92%;
 
-    --card: 30 12% 15%;
-    --card-foreground: 40 30% 92%;
+    --card: 40 8% 13%;
+    --card-foreground: 45 25% 92%;
 
-    --popover: 30 12% 15%;
-    --popover-foreground: 40 30% 92%;
+    --popover: 40 8% 13%;
+    --popover-foreground: 45 25% 92%;
 
-    --primary: 40 35% 85%;
-    --primary-foreground: 30 20% 15%;
+    --primary: 45 25% 80%;
+    --primary-foreground: 40 10% 12%;
 
-    --secondary: 30 15% 20%;
-    --secondary-foreground: 40 30% 90%;
+    --secondary: 40 10% 18%;
+    --secondary-foreground: 45 25% 90%;
 
-    --muted: 30 12% 22%;
-    --muted-foreground: 35 20% 65%;
+    --muted: 40 8% 20%;
+    --muted-foreground: 45 15% 60%;
 
-    --accent: 30 20% 25%;
-    --accent-foreground: 40 30% 90%;
+    --accent: 40 12% 22%;
+    --accent-foreground: 45 25% 90%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 30 12% 22%;
-    --input: 30 12% 22%;
-    --ring: 35 30% 60%;
+    --border: 40 8% 20%;
+    --input: 40 8% 20%;
+    --ring: 45 20% 55%;
 
-    --cream: 30 15% 18%;
-    --sand: 30 12% 22%;
-    --taupe: 30 15% 40%;
-    --warm-brown: 35 25% 55%;
-    --deep-brown: 40 30% 85%;
+    --cream: 40 10% 15%;
+    --sand: 40 8% 20%;
+    --taupe: 40 10% 40%;
+    --olive: 50 12% 50%;
+    --warm-brown: 45 18% 55%;
+    --deep-brown: 48 25% 85%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -164,7 +166,7 @@
   }
 
   .divider-elegant {
-    @apply w-20 h-0.5 bg-gradient-to-r from-transparent via-taupe to-transparent mx-auto;
+    @apply w-16 h-px bg-taupe/50 mx-auto;
   }
 }
 
