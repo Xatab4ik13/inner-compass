@@ -73,9 +73,9 @@ const Header = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden mt-4 pb-4"
+              className="lg:hidden mt-4 pb-4 bg-background/95 backdrop-blur-md rounded-lg px-4 shadow-soft"
             >
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-3 py-2">
                 {navItems.map((item) => (
                   <a
                     key={item.href}
