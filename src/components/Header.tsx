@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -25,6 +25,35 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToSection = useCallback((sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      const offsetPosition = elementPosition - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  }, []);
+
+  const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const sectionId = href.replace("#", "");
+    scrollToSection(sectionId);
+  }, [scrollToSection]);
+
+  const handleMobileNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+    const sectionId = href.replace("#", "");
+    // Delay scroll to allow menu to close
+    setTimeout(() => {
+      scrollToSection(sectionId);
+    }, 100);
+  }, [scrollToSection]);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -35,7 +64,14 @@ const Header = () => {
     >
       <div className="container-wide px-4 md:px-8">
         <div className="flex items-center justify-between">
-          <a href="#" className="font-display text-xl md:text-2xl font-medium text-deep-brown">
+          <a 
+            href="#" 
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            className="font-display text-xl md:text-2xl font-medium text-deep-brown"
+          >
             Олег Петрович
           </a>
 
@@ -44,19 +80,7 @@ const Header = () => {
               <a
                 key={item.href}
                 href={item.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  const element = document.querySelector(item.href);
-                  if (element) {
-                    const headerOffset = 80;
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                    window.scrollTo({
-                      top: offsetPosition,
-                      behavior: "smooth"
-                    });
-                  }
-                }}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="font-body text-xs tracking-wide text-foreground/70 hover:text-deep-brown transition-colors duration-200 uppercase"
               >
                 {item.label}
@@ -66,19 +90,7 @@ const Header = () => {
 
           <a
             href="#contacts"
-            onClick={(e) => {
-              e.preventDefault();
-              const element = document.querySelector("#contacts");
-              if (element) {
-                const headerOffset = 80;
-                const elementPosition = element.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                window.scrollTo({
-                  top: offsetPosition,
-                  behavior: "smooth"
-                });
-              }
-            }}
+            onClick={(e) => handleNavClick(e, "#contacts")}
             className="hidden lg:inline-flex px-6 py-2.5 bg-deep-brown text-primary-foreground font-body text-xs tracking-wide uppercase hover:bg-warm-brown transition-colors duration-200"
           >
             Записаться
@@ -106,20 +118,7 @@ const Header = () => {
                   <a
                     key={item.href}
                     href={item.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setIsMobileMenuOpen(false);
-                      const element = document.querySelector(item.href);
-                      if (element) {
-                        const headerOffset = 70;
-                        const elementPosition = element.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                        window.scrollTo({
-                          top: offsetPosition,
-                          behavior: "smooth"
-                        });
-                      }
-                    }}
+                    onClick={(e) => handleMobileNavClick(e, item.href)}
                     className="font-body text-sm text-foreground/80 hover:text-deep-brown transition-colors duration-200 py-2"
                   >
                     {item.label}
@@ -127,20 +126,7 @@ const Header = () => {
                 ))}
                 <a
                   href="#contacts"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setIsMobileMenuOpen(false);
-                    const element = document.querySelector("#contacts");
-                    if (element) {
-                      const headerOffset = 70;
-                      const elementPosition = element.getBoundingClientRect().top;
-                      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                      window.scrollTo({
-                        top: offsetPosition,
-                        behavior: "smooth"
-                      });
-                    }
-                  }}
+                  onClick={(e) => handleMobileNavClick(e, "#contacts")}
                   className="mt-2 px-5 py-3 bg-deep-brown text-primary-foreground font-body text-sm text-center hover:bg-warm-brown transition-colors duration-200"
                 >
                   Записаться
