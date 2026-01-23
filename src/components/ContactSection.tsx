@@ -2,6 +2,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Phone, Mail, Send, MessageCircle } from "lucide-react";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -11,11 +12,43 @@ const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate inputs
+    if (!formData.name.trim()) {
+      toast.error("Пожалуйста, введите ваше имя");
+      return;
+    }
+    
+    if (!formData.phone.trim()) {
+      toast.error("Пожалуйста, введите телефон или Telegram");
+      return;
+    }
+    
     setIsSubmitting(true);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    toast.success("Сообщение отправлено! Я свяжусь с вами в ближайшее время.");
-    setFormData({ name: "", phone: "", message: "" });
-    setIsSubmitting(false);
+    
+    try {
+      const { data, error } = await supabase.functions.invoke("send-telegram", {
+        body: {
+          name: formData.name.trim(),
+          phone: formData.phone.trim(),
+          message: formData.message.trim() || undefined,
+        },
+      });
+
+      if (error) {
+        console.error("Error sending message:", error);
+        toast.error("Ошибка при отправке. Попробуйте позже или свяжитесь напрямую.");
+        return;
+      }
+
+      toast.success("Сообщение отправлено! Я свяжусь с вами в ближайшее время.");
+      setFormData({ name: "", phone: "", message: "" });
+    } catch (error) {
+      console.error("Error:", error);
+      toast.error("Ошибка при отправке. Попробуйте позже или свяжитесь напрямую.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
