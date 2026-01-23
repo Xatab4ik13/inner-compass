@@ -101,7 +101,7 @@ const AboutSection = () => {
               </div>
             </div>
 
-            {/* B17 Link - clean logo only */}
+            {/* B17 Link - more visible */}
             <motion.a
               href="https://www.b17.ru/id1104041/"
               target="_blank"
@@ -109,13 +109,18 @@ const AboutSection = () => {
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.4, delay: 0.5 }}
-              className="mt-8 inline-flex items-center gap-3 hover:opacity-80 transition-opacity group"
+              className="mt-8 inline-flex items-center gap-4 px-6 py-4 bg-white border-2 border-taupe/40 hover:border-olive/60 hover:shadow-soft transition-all duration-300 group"
             >
-              <img src={b17Logo} alt="B17.ru" className="h-10 w-auto" />
-              <span className="font-body text-sm text-taupe group-hover:text-deep-brown transition-colors">
-                Профиль на B17.ru
-              </span>
-              <ExternalLink size={14} className="text-taupe group-hover:text-deep-brown transition-colors" />
+              <img src={b17Logo} alt="B17.ru" className="h-12 w-auto" />
+              <div className="flex flex-col">
+                <span className="font-display text-base text-deep-brown font-medium">
+                  Профиль на B17.ru
+                </span>
+                <span className="font-body text-xs text-taupe">
+                  Отзывы и рейтинг
+                </span>
+              </div>
+              <ExternalLink size={18} className="text-deep-brown ml-2" />
             </motion.a>
           </motion.div>
         </div>
