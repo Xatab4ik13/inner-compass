@@ -66,7 +66,20 @@ const Header = () => {
 
           <a
             href="#contacts"
-            className="hidden md:inline-flex px-6 py-2.5 bg-deep-brown text-primary-foreground font-body text-xs tracking-wide uppercase hover:bg-warm-brown transition-colors duration-200"
+            onClick={(e) => {
+              e.preventDefault();
+              const element = document.querySelector("#contacts");
+              if (element) {
+                const headerOffset = 80;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: "smooth"
+                });
+              }
+            }}
+            className="hidden lg:inline-flex px-6 py-2.5 bg-deep-brown text-primary-foreground font-body text-xs tracking-wide uppercase hover:bg-warm-brown transition-colors duration-200"
           >
             Записаться
           </a>
