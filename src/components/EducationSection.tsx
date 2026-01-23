@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, memo } from "react";
 import { X } from "lucide-react";
 import {
   Carousel,
@@ -18,6 +18,7 @@ import diploma6 from "@/assets/diploma-6-fixed.jpg";
 import diploma7 from "@/assets/diploma-7-fixed.jpg";
 import diploma9 from "@/assets/diploma-9-fixed.jpg";
 import diploma10 from "@/assets/diploma-10-fixed.jpg";
+import diploma11 from "@/assets/diploma-11.jpg";
 
 const diplomas = [
   { id: 1, src: diploma1, alt: "Удостоверение о повышении квалификации - работа с детскими травмами" },
@@ -25,11 +26,42 @@ const diplomas = [
   { id: 3, src: diploma3, alt: "Диплом - Клинический психолог МИАП" },
   { id: 4, src: diploma4, alt: "Диплом магистра с отличием - ВЕИП" },
   { id: 5, src: diploma5, alt: "Диплом о профессиональной переподготовке - Клинический психолог" },
+  { id: 11, src: diploma11, alt: "Удостоверение - КПТ при аддиктивном и суицидальном поведении" },
   { id: 6, src: diploma6, alt: "Диплом о профессиональной переподготовке - Практический психолог" },
   { id: 7, src: diploma7, alt: "Удостоверение - Сексология в психологическом консультировании" },
   { id: 9, src: diploma9, alt: "Удостоверение - Психологическая помощь при зависимостях" },
   { id: 10, src: diploma10, alt: "Удостоверение - Психосоматические расстройства" },
 ];
+
+// Memoized diploma card for better performance
+const DiplomaCard = memo(({ diploma, onClick }: { diploma: typeof diplomas[0]; onClick: () => void }) => (
+  <div 
+    className="cursor-pointer group"
+    onClick={onClick}
+  >
+    <div className="relative p-2 bg-gradient-to-br from-sand via-cream to-sand border border-taupe/30 shadow-soft hover:shadow-card transition-shadow duration-300">
+      <div className="relative border border-taupe/20 p-1 bg-cream/50">
+        <div className="aspect-[4/3] overflow-hidden bg-muted/20">
+          <img
+            src={diploma.src}
+            alt={diploma.alt}
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
+            style={{ imageOrientation: "none" }}
+            className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-500"
+          />
+        </div>
+      </div>
+      <div className="absolute top-0 left-0 w-5 h-5 border-l-2 border-t-2 border-taupe/40" />
+      <div className="absolute top-0 right-0 w-5 h-5 border-r-2 border-t-2 border-taupe/40" />
+      <div className="absolute bottom-0 left-0 w-5 h-5 border-l-2 border-b-2 border-taupe/40" />
+      <div className="absolute bottom-0 right-0 w-5 h-5 border-r-2 border-b-2 border-taupe/40" />
+    </div>
+  </div>
+));
+
+DiplomaCard.displayName = "DiplomaCard";
 
 const EducationSection = () => {
   const ref = useRef(null);
@@ -73,31 +105,10 @@ const EducationSection = () => {
             <CarouselContent className="-ml-2 md:-ml-4">
               {diplomas.map((diploma) => (
                 <CarouselItem key={diploma.id} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
-                  <div 
-                    className="cursor-pointer group"
-                    onClick={() => setSelectedDiploma(diploma)}
-                  >
-                    {/* Elegant frame matching photo style */}
-                    <div className="relative p-2 bg-gradient-to-br from-sand via-cream to-sand border border-taupe/30 shadow-soft hover:shadow-card transition-shadow duration-300">
-                      <div className="relative border border-taupe/20 p-1 bg-cream/50">
-                        <div className="aspect-[4/3] overflow-hidden bg-muted/20">
-                          <img
-                            src={diploma.src}
-                            alt={diploma.alt}
-                            loading="lazy"
-                            decoding="async"
-                            style={{ imageOrientation: "none" }}
-                            className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-500"
-                          />
-                        </div>
-                      </div>
-                      {/* Corner decorations */}
-                      <div className="absolute top-0 left-0 w-5 h-5 border-l-2 border-t-2 border-taupe/40" />
-                      <div className="absolute top-0 right-0 w-5 h-5 border-r-2 border-t-2 border-taupe/40" />
-                      <div className="absolute bottom-0 left-0 w-5 h-5 border-l-2 border-b-2 border-taupe/40" />
-                      <div className="absolute bottom-0 right-0 w-5 h-5 border-r-2 border-b-2 border-taupe/40" />
-                    </div>
-                  </div>
+                  <DiplomaCard 
+                    diploma={diploma} 
+                    onClick={() => setSelectedDiploma(diploma)} 
+                  />
                 </CarouselItem>
               ))}
             </CarouselContent>
