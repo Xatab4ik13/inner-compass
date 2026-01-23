@@ -83,6 +83,8 @@ const EducationSection = () => {
                       <img
                         src={diploma.src}
                         alt={diploma.alt}
+                        loading="lazy"
+                        decoding="async"
                         style={{ imageOrientation: "none" }}
                         className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-500"
                       />
