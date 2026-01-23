@@ -60,7 +60,7 @@ const HeroSection = () => {
               className="mt-8"
             >
               <p className="font-display text-2xl md:text-3xl lg:text-4xl text-deep-brown font-semibold">
-                Олег Петрович Пучков
+                Пучков Олег Петрович
               </p>
               <p className="font-body text-base text-warm-brown mt-2 tracking-wide">
                 Клинический психолог • Гипнотерапевт

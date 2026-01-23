@@ -22,7 +22,7 @@ const AboutSection = () => {
             Обо мне
           </span>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-deep-brown">
-            Олег Петрович Пучков
+            Пучков Олег Петрович
           </h2>
           <div className="divider-elegant mt-8" />
         </motion.div>
