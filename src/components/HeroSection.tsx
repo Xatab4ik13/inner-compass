@@ -13,16 +13,16 @@ const helpItems = [
 
 const HeroSection = () => {
   return (
-    <section id="help" className="min-h-screen pt-20 md:pt-28 pb-16 bg-background relative overflow-hidden">
+    <section id="help" className="min-h-screen pt-24 md:pt-32 pb-20 bg-background relative overflow-hidden">
       {/* Subtle decorative lines */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
         <div className="absolute top-0 left-1/4 w-px h-full bg-deep-brown" />
         <div className="absolute top-0 left-2/4 w-px h-full bg-deep-brown" />
         <div className="absolute top-0 left-3/4 w-px h-full bg-deep-brown" />
       </div>
 
       <div className="container-wide px-4 md:px-8 relative">
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* Image - Left side */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -35,11 +35,11 @@ const HeroSection = () => {
                 <img
                   src={psychologistImage}
                   alt="Олег Петрович - психолог"
-                  className="w-full h-full object-cover grayscale-[20%]"
+                  className="w-full h-full object-cover grayscale-[15%]"
                 />
               </div>
               {/* Decorative frame */}
-              <div className="absolute -bottom-4 -right-4 w-full h-full border border-taupe/30 -z-10" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full border border-taupe/40 -z-10" />
             </div>
             
             {/* Name card */}
@@ -47,12 +47,12 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-6"
+              className="mt-8"
             >
-              <p className="font-display text-2xl md:text-3xl text-deep-brown font-medium">
+              <p className="font-display text-2xl md:text-3xl lg:text-4xl text-deep-brown font-semibold">
                 Олег Петрович Пучков
               </p>
-              <p className="font-body text-sm text-taupe mt-1 tracking-wide uppercase">
+              <p className="font-body text-base text-warm-brown mt-2 tracking-wide">
                 Клинический психолог • Гипнотерапевт
               </p>
             </motion.div>
@@ -65,36 +65,36 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-7 lg:pt-8"
           >
-            <span className="inline-block font-body text-xs tracking-[0.2em] text-taupe uppercase mb-6">
+            <span className="inline-block font-body text-sm tracking-[0.15em] text-warm-brown uppercase mb-6">
               Психологическая помощь
             </span>
             
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-deep-brown leading-[1.1] mb-8">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold text-deep-brown leading-[1.1] mb-8">
               Путь к внутренней
               <span className="block italic text-olive mt-2">гармонии и целостности</span>
             </h1>
             
-            <p className="font-body text-base text-muted-foreground mb-10 max-w-xl leading-relaxed">
+            <p className="font-body text-lg md:text-xl text-foreground mb-12 max-w-xl leading-relaxed">
               Профессиональная психологическая помощь в преодолении сложных жизненных ситуаций. 
               Создаем пространство для безопасной и глубокой работы.
             </p>
             
-            <div className="mb-10">
-              <h2 className="font-display text-lg text-deep-brown mb-5 flex items-center gap-3">
-                <span className="w-8 h-px bg-olive" />
+            <div className="mb-12">
+              <h2 className="font-display text-xl md:text-2xl text-deep-brown mb-6 flex items-center gap-4">
+                <span className="w-10 h-px bg-olive" />
                 Я помогаю, когда
               </h2>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {helpItems.map((item, index) => (
                   <motion.li
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.4, delay: 0.4 + index * 0.08 }}
-                    className="flex items-start gap-3 font-body text-foreground/80"
+                    className="flex items-start gap-4 font-body text-foreground"
                   >
-                    <span className="inline-block w-1 h-1 rounded-full bg-olive mt-2.5 shrink-0" />
-                    <span className="text-sm">{item}</span>
+                    <span className="inline-block w-1.5 h-1.5 rounded-full bg-olive mt-2.5 shrink-0" />
+                    <span className="text-base md:text-lg">{item}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -102,7 +102,7 @@ const HeroSection = () => {
 
             <a
               href="#contacts"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-deep-brown text-primary-foreground font-body text-sm tracking-wide rounded-none hover:bg-warm-brown transition-colors duration-300"
+              className="inline-flex items-center gap-2 px-10 py-5 bg-deep-brown text-primary-foreground font-body text-base tracking-wide hover:bg-warm-brown transition-colors duration-300"
             >
               Записаться на консультацию
             </a>

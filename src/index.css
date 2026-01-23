@@ -4,61 +4,61 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Design System for Psychologist Website - Olive Beige Palette inspired by psy-va.ru */
+/* Design System for Psychologist Website - Soft Beige Palette with good contrast */
 
 @layer base {
   :root {
-    /* Neutral olive-beige palette */
-    --background: 45 20% 95%;
-    --foreground: 40 10% 20%;
+    /* Softer beige palette with better contrast */
+    --background: 40 25% 94%;
+    --foreground: 30 15% 18%;
 
-    --card: 48 25% 97%;
-    --card-foreground: 40 10% 20%;
+    --card: 42 30% 97%;
+    --card-foreground: 30 15% 18%;
 
-    --popover: 48 25% 97%;
-    --popover-foreground: 40 10% 20%;
+    --popover: 42 30% 97%;
+    --popover-foreground: 30 15% 18%;
 
-    /* Muted olive-brown primary */
-    --primary: 45 15% 35%;
-    --primary-foreground: 48 30% 97%;
+    /* Warm brown primary - darker for better contrast */
+    --primary: 30 25% 28%;
+    --primary-foreground: 40 35% 96%;
 
     /* Soft beige secondary */
-    --secondary: 45 20% 90%;
-    --secondary-foreground: 40 15% 25%;
+    --secondary: 38 28% 88%;
+    --secondary-foreground: 30 20% 22%;
 
-    /* Muted olive tones */
-    --muted: 48 15% 92%;
-    --muted-foreground: 40 10% 50%;
+    /* Muted tones */
+    --muted: 40 20% 90%;
+    --muted-foreground: 30 12% 38%;
 
-    /* Warm beige accent */
-    --accent: 42 25% 88%;
-    --accent-foreground: 40 15% 22%;
+    /* Warm accent */
+    --accent: 38 30% 86%;
+    --accent-foreground: 30 20% 20%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 45 15% 85%;
-    --input: 45 15% 88%;
-    --ring: 45 20% 45%;
+    --border: 38 20% 82%;
+    --input: 38 20% 86%;
+    --ring: 30 25% 40%;
 
     --radius: 0.5rem;
 
-    /* Custom psychology theme colors - psy-va.ru inspired */
-    --cream: 48 30% 96%;
-    --sand: 45 22% 88%;
-    --taupe: 40 12% 65%;
-    --olive: 50 15% 45%;
-    --warm-brown: 38 18% 38%;
-    --deep-brown: 35 15% 22%;
+    /* Custom psychology theme colors - warmer with better contrast */
+    --cream: 40 35% 95%;
+    --sand: 38 28% 86%;
+    --taupe: 30 15% 50%;
+    --olive: 35 20% 42%;
+    --warm-brown: 28 28% 35%;
+    --deep-brown: 25 25% 20%;
 
     /* Typography */
     --font-display: 'Cormorant Garamond', Georgia, serif;
     --font-body: 'Raleway', 'Segoe UI', sans-serif;
 
     /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(40 10% 20% / 0.06);
-    --shadow-card: 0 8px 30px -8px hsl(40 10% 20% / 0.1);
-    --shadow-elevated: 0 20px 50px -15px hsl(40 10% 20% / 0.12);
+    --shadow-soft: 0 4px 20px -4px hsl(30 15% 18% / 0.08);
+    --shadow-card: 0 8px 30px -8px hsl(30 15% 18% / 0.12);
+    --shadow-elevated: 0 20px 50px -15px hsl(30 15% 18% / 0.15);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -71,40 +71,40 @@
   }
 
   .dark {
-    --background: 40 10% 10%;
-    --foreground: 45 25% 92%;
+    --background: 30 12% 10%;
+    --foreground: 40 28% 92%;
 
-    --card: 40 8% 13%;
-    --card-foreground: 45 25% 92%;
+    --card: 30 10% 13%;
+    --card-foreground: 40 28% 92%;
 
-    --popover: 40 8% 13%;
-    --popover-foreground: 45 25% 92%;
+    --popover: 30 10% 13%;
+    --popover-foreground: 40 28% 92%;
 
-    --primary: 45 25% 80%;
-    --primary-foreground: 40 10% 12%;
+    --primary: 40 30% 82%;
+    --primary-foreground: 30 15% 12%;
 
-    --secondary: 40 10% 18%;
-    --secondary-foreground: 45 25% 90%;
+    --secondary: 30 12% 18%;
+    --secondary-foreground: 40 28% 90%;
 
-    --muted: 40 8% 20%;
-    --muted-foreground: 45 15% 60%;
+    --muted: 30 10% 20%;
+    --muted-foreground: 38 18% 60%;
 
-    --accent: 40 12% 22%;
-    --accent-foreground: 45 25% 90%;
+    --accent: 30 14% 22%;
+    --accent-foreground: 40 28% 90%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 40 8% 20%;
-    --input: 40 8% 20%;
-    --ring: 45 20% 55%;
+    --border: 30 10% 20%;
+    --input: 30 10% 20%;
+    --ring: 38 22% 55%;
 
-    --cream: 40 10% 15%;
-    --sand: 40 8% 20%;
-    --taupe: 40 10% 40%;
-    --olive: 50 12% 50%;
-    --warm-brown: 45 18% 55%;
-    --deep-brown: 48 25% 85%;
+    --cream: 30 12% 15%;
+    --sand: 30 10% 20%;
+    --taupe: 30 12% 45%;
+    --olive: 35 18% 50%;
+    --warm-brown: 38 22% 55%;
+    --deep-brown: 42 28% 85%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -124,21 +124,24 @@
 
   html {
     scroll-behavior: smooth;
+    font-size: 16px;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-body);
+    line-height: 1.6;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
+    line-height: 1.2;
   }
 }
 
 @layer components {
   .section-padding {
-    @apply py-16 md:py-24 px-4 md:px-8;
+    @apply py-20 md:py-28 px-4 md:px-8;
   }
 
   .container-narrow {
@@ -166,7 +169,7 @@
   }
 
   .divider-elegant {
-    @apply w-16 h-px bg-taupe/50 mx-auto;
+    @apply w-16 h-px bg-taupe mx-auto;
   }
 }
 
