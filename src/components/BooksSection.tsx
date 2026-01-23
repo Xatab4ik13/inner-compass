@@ -2,11 +2,13 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ExternalLink } from "lucide-react";
 import bookCover1 from "@/assets/book-cover-1.jpg";
+import bookCover2 from "@/assets/book-cover-2.jpg";
+import bookCover3 from "@/assets/book-cover-3.jpg";
 
 const books = [
   { id: 1, title: "Ничья судьба", url: "https://www.litres.ru/72726073/", coverUrl: bookCover1 },
-  { id: 2, title: "Книга автора", url: "https://www.litres.ru/71094397/", coverUrl: "https://cv7.litres.ru/pub/c/cover/71094397.webp" },
-  { id: 3, title: "Парадокс гениальности", url: "https://www.litres.ru/book/oleg-pet/paradoks-genialnosti-72485728/", coverUrl: "https://cv7.litres.ru/pub/c/cover/72485728.webp" },
+  { id: 2, title: "The Слон", url: "https://www.litres.ru/71094397/", coverUrl: bookCover2 },
+  { id: 3, title: "Парадокс гениальности", url: "https://www.litres.ru/book/oleg-pet/paradoks-genialnosti-72485728/", coverUrl: bookCover3 },
   { id: 4, title: "Сага о пилоте Делириум", url: "https://www.litres.ru/book/oleg-pet/saga-o-pilote-delirium-70823029/", coverUrl: "https://cv7.litres.ru/pub/c/cover/70823029.webp" },
   { id: 5, title: "Время жить и время выбирать", url: "https://www.litres.ru/book/oleg-pet/vremya-zhit-i-vremya-vybirat-72721630/", coverUrl: "https://cv7.litres.ru/pub/c/cover/72721630.webp" },
 ];
