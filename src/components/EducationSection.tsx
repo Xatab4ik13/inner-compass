@@ -79,12 +79,12 @@ const EducationSection = () => {
                     className="bg-card overflow-hidden shadow-soft hover:shadow-card transition-all duration-300 cursor-pointer group"
                     onClick={() => setSelectedDiploma(diploma)}
                   >
-                    <div className="aspect-[4/3] overflow-hidden">
+                    <div className="aspect-[4/3] overflow-hidden bg-muted/30 p-3">
                       <img
                         src={diploma.src}
                         alt={diploma.alt}
                         style={{ imageOrientation: "none" }}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-500"
                       />
                     </div>
                   </div>
