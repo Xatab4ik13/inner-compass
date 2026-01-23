@@ -9,29 +9,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-import diploma1 from "@/assets/diploma-1-fixed.jpg";
-import diploma2 from "@/assets/diploma-2-fixed.jpg";
-import diploma3 from "@/assets/diploma-3-fixed.jpg";
-import diploma4 from "@/assets/diploma-4-fixed.jpg";
-import diploma5 from "@/assets/diploma-5-fixed.jpg";
-import diploma6 from "@/assets/diploma-6-fixed.jpg";
-import diploma7 from "@/assets/diploma-7-fixed.jpg";
-import diploma9 from "@/assets/diploma-9-fixed.jpg";
-import diploma10 from "@/assets/diploma-10-fixed.jpg";
-import diploma11 from "@/assets/diploma-11.jpg";
-
-const diplomas = [
-  { id: 1, src: diploma1, alt: "Удостоверение о повышении квалификации - работа с детскими травмами" },
-  { id: 2, src: diploma2, alt: "Удостоверение - Сексология в психологическом консультировании" },
-  { id: 3, src: diploma3, alt: "Диплом - Клинический психолог МИАП" },
-  { id: 4, src: diploma4, alt: "Диплом магистра с отличием - ВЕИП" },
-  { id: 5, src: diploma5, alt: "Диплом о профессиональной переподготовке - Клинический психолог" },
-  { id: 11, src: diploma11, alt: "Удостоверение - КПТ при аддиктивном и суицидальном поведении" },
-  { id: 6, src: diploma6, alt: "Диплом о профессиональной переподготовке - Практический психолог" },
-  { id: 7, src: diploma7, alt: "Удостоверение - Сексология в психологическом консультировании" },
-  { id: 9, src: diploma9, alt: "Удостоверение - Психологическая помощь при зависимостях" },
-  { id: 10, src: diploma10, alt: "Удостоверение - Психосоматические расстройства" },
-];
+// Дипломы будут добавлены после загрузки
+const diplomas: { id: number; src: string; alt: string }[] = [];
 
 // Memoized diploma card for better performance
 const DiplomaCard = memo(({ diploma, onClick }: { diploma: typeof diplomas[0]; onClick: () => void }) => (
