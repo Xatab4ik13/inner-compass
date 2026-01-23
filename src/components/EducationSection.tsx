@@ -19,6 +19,8 @@ import diploma7 from "@/assets/diploma-7.jpg";
 import diploma8 from "@/assets/diploma-8.jpg";
 import diploma9 from "@/assets/diploma-9.jpg";
 import diploma10 from "@/assets/diploma-10.jpg";
+import diploma11 from "@/assets/diploma-11.jpg";
+import diploma12 from "@/assets/diploma-12.jpg";
 
 const diplomas = [
   { id: 1, src: diploma1, alt: "Удостоверение - Психокоррекционная работа с детскими травмами" },
@@ -31,6 +33,8 @@ const diplomas = [
   { id: 8, src: diploma8, alt: "Удостоверение - КПТ при аддиктивном и суицидальном поведении" },
   { id: 9, src: diploma9, alt: "Удостоверение - Психологическая помощь при зависимостях" },
   { id: 10, src: diploma10, alt: "Удостоверение - Психосоматические расстройства" },
+  { id: 11, src: diploma11, alt: "Сертификат - Введение в регрессивный гипноз: детский транс" },
+  { id: 12, src: diploma12, alt: "Сертификат - Терапия принятия и ответственности (ACT)" },
 ];
 
 // Memoized diploma card for better performance
