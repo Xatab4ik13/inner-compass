@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { ExternalLink } from "lucide-react";
-import psychologistImage from "@/assets/psychologist-2.jpg";
+import psychologistImage from "@/assets/psychologist-about.jpg";
 import b17Logo from "@/assets/b17-logo.png";
 
 const AboutSection = () => {
