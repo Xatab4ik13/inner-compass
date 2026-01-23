@@ -48,7 +48,7 @@ const HeroSection = () => {
               <div className="relative p-3 bg-gradient-to-br from-sand via-cream to-sand border border-taupe/30 shadow-soft">
                 <div className="relative border border-taupe/20 p-1.5 bg-cream/50">
                   <div className="aspect-[3/4] overflow-hidden relative">
-                    <AnimatePresence mode="wait">
+                    <AnimatePresence initial={false}>
                       <motion.img
                         key={currentImage}
                         src={images[currentImage]}
@@ -57,7 +57,7 @@ const HeroSection = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        transition={{ duration: 0.8 }}
+                        transition={{ duration: 1.5, ease: "easeInOut" }}
                       />
                     </AnimatePresence>
                   </div>
