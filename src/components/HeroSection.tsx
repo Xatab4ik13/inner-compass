@@ -1,5 +1,9 @@
-import { motion } from "framer-motion";
-import psychologistImage from "@/assets/psychologist-1.jpg";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import psychologistImage1 from "@/assets/psychologist-1.jpg";
+import psychologistImage2 from "@/assets/psychologist-2.jpg";
+
+const images = [psychologistImage1, psychologistImage2];
 
 const helpItems = [
   "Боль утраты или расставания становится слишком тяжелой",
@@ -12,6 +16,15 @@ const helpItems = [
 ];
 
 const HeroSection = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="help" className="min-h-screen pt-24 md:pt-32 pb-20 bg-background relative overflow-hidden">
       {/* Subtle decorative lines */}
@@ -34,12 +47,19 @@ const HeroSection = () => {
               {/* Elegant double frame matching About section */}
               <div className="relative p-3 bg-gradient-to-br from-sand via-cream to-sand border border-taupe/30 shadow-soft">
                 <div className="relative border border-taupe/20 p-1.5 bg-cream/50">
-                  <div className="aspect-[3/4] overflow-hidden">
-                    <img
-                      src={psychologistImage}
-                      alt="Олег Петрович - психолог"
-                      className="w-full h-full object-cover"
-                    />
+                  <div className="aspect-[3/4] overflow-hidden relative">
+                    <AnimatePresence mode="wait">
+                      <motion.img
+                        key={currentImage}
+                        src={images[currentImage]}
+                        alt="Олег Петрович - психолог"
+                        className="w-full h-full object-cover absolute inset-0"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.8 }}
+                      />
+                    </AnimatePresence>
                   </div>
                 </div>
                 {/* Corner decorations */}
