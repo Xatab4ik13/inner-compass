@@ -48,7 +48,6 @@ const DiplomaCard = memo(({ diploma, onClick }: { diploma: typeof diplomas[0]; o
             loading="lazy"
             decoding="async"
             fetchPriority="low"
-            style={{ imageOrientation: "none" }}
             className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-500"
           />
         </div>
@@ -141,7 +140,6 @@ const EducationSection = () => {
           <img
             src={selectedDiploma.src}
             alt={selectedDiploma.alt}
-            style={{ imageOrientation: "none" }}
             className="max-w-full max-h-[90vh] object-contain shadow-elevated"
             onClick={(e) => e.stopPropagation()}
           />
