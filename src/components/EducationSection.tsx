@@ -76,18 +76,28 @@ const EducationSection = () => {
               {diplomas.map((diploma) => (
                 <CarouselItem key={diploma.id} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                   <div 
-                    className="bg-card overflow-hidden shadow-soft hover:shadow-card transition-all duration-300 cursor-pointer group"
+                    className="cursor-pointer group"
                     onClick={() => setSelectedDiploma(diploma)}
                   >
-                    <div className="aspect-[4/3] overflow-hidden bg-muted/30 p-3">
-                      <img
-                        src={diploma.src}
-                        alt={diploma.alt}
-                        loading="lazy"
-                        decoding="async"
-                        style={{ imageOrientation: "none" }}
-                        className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-500"
-                      />
+                    {/* Elegant frame matching photo style */}
+                    <div className="relative p-2 bg-gradient-to-br from-sand via-cream to-sand border border-taupe/30 shadow-soft hover:shadow-card transition-shadow duration-300">
+                      <div className="relative border border-taupe/20 p-1 bg-cream/50">
+                        <div className="aspect-[4/3] overflow-hidden bg-muted/20">
+                          <img
+                            src={diploma.src}
+                            alt={diploma.alt}
+                            loading="lazy"
+                            decoding="async"
+                            style={{ imageOrientation: "none" }}
+                            className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-500"
+                          />
+                        </div>
+                      </div>
+                      {/* Corner decorations */}
+                      <div className="absolute top-0 left-0 w-5 h-5 border-l-2 border-t-2 border-taupe/40" />
+                      <div className="absolute top-0 right-0 w-5 h-5 border-r-2 border-t-2 border-taupe/40" />
+                      <div className="absolute bottom-0 left-0 w-5 h-5 border-l-2 border-b-2 border-taupe/40" />
+                      <div className="absolute bottom-0 right-0 w-5 h-5 border-r-2 border-b-2 border-taupe/40" />
                     </div>
                   </div>
                 </CarouselItem>
