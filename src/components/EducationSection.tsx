@@ -83,6 +83,7 @@ const EducationSection = () => {
                       <img
                         src={diploma.src}
                         alt={diploma.alt}
+                        style={{ imageOrientation: "from-image" }}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
@@ -119,6 +120,7 @@ const EducationSection = () => {
           <img
             src={selectedDiploma.src}
             alt={selectedDiploma.alt}
+            style={{ imageOrientation: "from-image" }}
             className="max-w-full max-h-[90vh] object-contain shadow-elevated"
             onClick={(e) => e.stopPropagation()}
           />
