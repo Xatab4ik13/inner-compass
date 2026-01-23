@@ -4,13 +4,15 @@ import { ExternalLink } from "lucide-react";
 import bookCover1 from "@/assets/book-cover-1.jpg";
 import bookCover2 from "@/assets/book-cover-2.jpg";
 import bookCover3 from "@/assets/book-cover-3.jpg";
+import bookCover4 from "@/assets/book-cover-4.jpg";
+import bookCover5 from "@/assets/book-cover-5.jpg";
 
 const books = [
   { id: 1, title: "Ничья судьба", url: "https://www.litres.ru/72726073/", coverUrl: bookCover1 },
   { id: 2, title: "The Слон", url: "https://www.litres.ru/71094397/", coverUrl: bookCover2 },
   { id: 3, title: "Парадокс гениальности", url: "https://www.litres.ru/book/oleg-pet/paradoks-genialnosti-72485728/", coverUrl: bookCover3 },
-  { id: 4, title: "Сага о пилоте Делириум", url: "https://www.litres.ru/book/oleg-pet/saga-o-pilote-delirium-70823029/", coverUrl: "https://cv7.litres.ru/pub/c/cover/70823029.webp" },
-  { id: 5, title: "Время жить и время выбирать", url: "https://www.litres.ru/book/oleg-pet/vremya-zhit-i-vremya-vybirat-72721630/", coverUrl: "https://cv7.litres.ru/pub/c/cover/72721630.webp" },
+  { id: 4, title: "Сага о Пилоте: Делириум", url: "https://www.litres.ru/book/oleg-pet/saga-o-pilote-delirium-70823029/", coverUrl: bookCover4 },
+  { id: 5, title: "Время жить и время выбирать", url: "https://www.litres.ru/book/oleg-pet/vremya-zhit-i-vremya-vybirat-72721630/", coverUrl: bookCover5 },
 ];
 
 const BooksSection = () => {
