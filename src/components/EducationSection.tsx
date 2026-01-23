@@ -16,7 +16,6 @@ import diploma4 from "@/assets/diploma-4-fixed.jpg";
 import diploma5 from "@/assets/diploma-5-fixed.jpg";
 import diploma6 from "@/assets/diploma-6-fixed.jpg";
 import diploma7 from "@/assets/diploma-7-fixed.jpg";
-import diploma8 from "@/assets/diploma-8-fixed.jpg";
 import diploma9 from "@/assets/diploma-9-fixed.jpg";
 import diploma10 from "@/assets/diploma-10-fixed.jpg";
 
@@ -28,7 +27,6 @@ const diplomas = [
   { id: 5, src: diploma5, alt: "Диплом о профессиональной переподготовке - Клинический психолог" },
   { id: 6, src: diploma6, alt: "Диплом о профессиональной переподготовке - Практический психолог" },
   { id: 7, src: diploma7, alt: "Удостоверение - Сексология в психологическом консультировании" },
-  { id: 8, src: diploma8, alt: "Удостоверение - КПТ при аддиктивном и суицидальном поведении" },
   { id: 9, src: diploma9, alt: "Удостоверение - Психологическая помощь при зависимостях" },
   { id: 10, src: diploma10, alt: "Удостоверение - Психосоматические расстройства" },
 ];
