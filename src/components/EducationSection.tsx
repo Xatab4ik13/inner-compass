@@ -9,16 +9,16 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-import diploma1 from "@/assets/diploma-1.jpg";
-import diploma2 from "@/assets/diploma-2.jpg";
-import diploma3 from "@/assets/diploma-3.jpg";
-import diploma4 from "@/assets/diploma-4.jpg";
-import diploma5 from "@/assets/diploma-5.jpg";
-import diploma6 from "@/assets/diploma-6.jpg";
-import diploma7 from "@/assets/diploma-7.jpg";
-import diploma8 from "@/assets/diploma-8.jpg";
-import diploma9 from "@/assets/diploma-9.jpg";
-import diploma10 from "@/assets/diploma-10.jpg";
+import diploma1 from "@/assets/diploma-1-fixed.jpg";
+import diploma2 from "@/assets/diploma-2-fixed.jpg";
+import diploma3 from "@/assets/diploma-3-fixed.jpg";
+import diploma4 from "@/assets/diploma-4-fixed.jpg";
+import diploma5 from "@/assets/diploma-5-fixed.jpg";
+import diploma6 from "@/assets/diploma-6-fixed.jpg";
+import diploma7 from "@/assets/diploma-7-fixed.jpg";
+import diploma8 from "@/assets/diploma-8-fixed.jpg";
+import diploma9 from "@/assets/diploma-9-fixed.jpg";
+import diploma10 from "@/assets/diploma-10-fixed.jpg";
 
 const diplomas = [
   { id: 1, src: diploma1, alt: "Удостоверение о повышении квалификации - работа с детскими травмами" },
