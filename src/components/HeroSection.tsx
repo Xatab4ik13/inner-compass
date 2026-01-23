@@ -31,15 +31,25 @@ const HeroSection = () => {
             className="lg:col-span-5 relative"
           >
             <div className="relative">
-              <div className="aspect-[3/4] overflow-hidden">
-                <img
-                  src={psychologistImage}
-                  alt="Олег Петрович - психолог"
-                  className="w-full h-full object-cover grayscale-[15%]"
-                />
+              {/* Elegant double frame matching About section */}
+              <div className="relative p-3 bg-gradient-to-br from-sand via-cream to-sand border border-taupe/30 shadow-soft">
+                <div className="relative border border-taupe/20 p-1.5 bg-cream/50">
+                  <div className="aspect-[3/4] overflow-hidden">
+                    <img
+                      src={psychologistImage}
+                      alt="Олег Петрович - психолог"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                {/* Corner decorations */}
+                <div className="absolute top-0 left-0 w-10 h-10 border-l-2 border-t-2 border-taupe/40" />
+                <div className="absolute top-0 right-0 w-10 h-10 border-r-2 border-t-2 border-taupe/40" />
+                <div className="absolute bottom-0 left-0 w-10 h-10 border-l-2 border-b-2 border-taupe/40" />
+                <div className="absolute bottom-0 right-0 w-10 h-10 border-r-2 border-b-2 border-taupe/40" />
               </div>
-              {/* Decorative frame */}
-              <div className="absolute -bottom-4 -right-4 w-full h-full border border-taupe/40 -z-10" />
+              {/* Shadow offset */}
+              <div className="absolute -bottom-3 -right-3 w-full h-full bg-taupe/10 -z-10" />
             </div>
             
             {/* Name card */}
