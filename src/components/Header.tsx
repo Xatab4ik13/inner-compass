@@ -44,6 +44,19 @@ const Header = () => {
               <a
                 key={item.href}
                 href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.querySelector(item.href);
+                  if (element) {
+                    const headerOffset = 80;
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: "smooth"
+                    });
+                  }
+                }}
                 className="font-body text-xs tracking-wide text-foreground/70 hover:text-deep-brown transition-colors duration-200 uppercase"
               >
                 {item.label}
@@ -80,7 +93,20 @@ const Header = () => {
                   <a
                     key={item.href}
                     href={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsMobileMenuOpen(false);
+                      const element = document.querySelector(item.href);
+                      if (element) {
+                        const headerOffset = 70;
+                        const elementPosition = element.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        window.scrollTo({
+                          top: offsetPosition,
+                          behavior: "smooth"
+                        });
+                      }
+                    }}
                     className="font-body text-sm text-foreground/80 hover:text-deep-brown transition-colors duration-200 py-2"
                   >
                     {item.label}
@@ -88,7 +114,20 @@ const Header = () => {
                 ))}
                 <a
                   href="#contacts"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsMobileMenuOpen(false);
+                    const element = document.querySelector("#contacts");
+                    if (element) {
+                      const headerOffset = 70;
+                      const elementPosition = element.getBoundingClientRect().top;
+                      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                      window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                      });
+                    }
+                  }}
                   className="mt-2 px-5 py-3 bg-deep-brown text-primary-foreground font-body text-sm text-center hover:bg-warm-brown transition-colors duration-200"
                 >
                   Записаться
