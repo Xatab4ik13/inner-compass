@@ -36,15 +36,25 @@ const AboutSection = () => {
             className="relative order-2 lg:order-1"
           >
             <div className="relative max-w-md mx-auto lg:mx-0">
-              <div className="aspect-square overflow-hidden">
-                <img
-                  src={psychologistImage}
-                  alt="Олег Петрович - клинический психолог"
-                  className="w-full h-full object-cover grayscale-[15%]"
-                />
+              {/* Elegant double frame */}
+              <div className="relative p-3 bg-gradient-to-br from-sand via-cream to-sand border border-taupe/30 shadow-soft">
+                <div className="relative border border-taupe/20 p-1.5 bg-cream/50">
+                  <div className="aspect-square overflow-hidden">
+                    <img
+                      src={psychologistImage}
+                      alt="Олег Петрович - клинический психолог"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                {/* Corner decorations */}
+                <div className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-taupe/40" />
+                <div className="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-taupe/40" />
+                <div className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-taupe/40" />
+                <div className="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-taupe/40" />
               </div>
-              {/* Decorative frame */}
-              <div className="absolute -bottom-4 -right-4 w-full h-full border border-taupe/40 -z-10" />
+              {/* Shadow offset */}
+              <div className="absolute -bottom-3 -right-3 w-full h-full bg-taupe/10 -z-10" />
             </div>
           </motion.div>
 
@@ -91,7 +101,7 @@ const AboutSection = () => {
               </div>
             </div>
 
-            {/* B17 Link */}
+            {/* B17 Link - clean logo only */}
             <motion.a
               href="https://www.b17.ru/id1104041/"
               target="_blank"
@@ -99,13 +109,13 @@ const AboutSection = () => {
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.4, delay: 0.5 }}
-              className="mt-8 inline-flex items-center gap-3 px-5 py-3 bg-sand border border-taupe/30 hover:bg-taupe/20 transition-colors group"
+              className="mt-8 inline-flex items-center gap-3 hover:opacity-80 transition-opacity group"
             >
-              <img src={b17Logo} alt="B17.ru" className="h-8 w-auto" />
-              <span className="font-body text-base text-deep-brown group-hover:text-olive transition-colors">
+              <img src={b17Logo} alt="B17.ru" className="h-10 w-auto" />
+              <span className="font-body text-sm text-taupe group-hover:text-deep-brown transition-colors">
                 Профиль на B17.ru
               </span>
-              <ExternalLink size={16} className="text-olive" />
+              <ExternalLink size={14} className="text-taupe group-hover:text-deep-brown transition-colors" />
             </motion.a>
           </motion.div>
         </div>
