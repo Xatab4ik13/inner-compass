@@ -109,18 +109,13 @@ const AboutSection = () => {
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.4, delay: 0.5 }}
-              className="mt-8 inline-flex items-center gap-4 px-6 py-4 bg-[#5c7085] hover:bg-[#4a5d6f] transition-all duration-300 group shadow-soft"
+              className="mt-8 inline-flex items-center gap-3 px-4 py-2.5 bg-[#5c7085] hover:bg-[#4a5d6f] transition-all duration-300 group shadow-soft"
             >
-              <img src={b17Logo} alt="B17.ru" className="h-12 w-auto brightness-0 invert" />
-              <div className="flex flex-col">
-                <span className="font-display text-base text-white font-medium">
-                  Профиль на B17.ru
-                </span>
-                <span className="font-body text-xs text-white/70">
-                  Отзывы и рейтинг
-                </span>
-              </div>
-              <ExternalLink size={18} className="text-white ml-2" />
+              <img src={b17Logo} alt="B17.ru" className="h-7 w-auto brightness-0 invert" />
+              <span className="font-body text-sm text-white">
+                Профиль на B17.ru
+              </span>
+              <ExternalLink size={14} className="text-white/80" />
             </motion.a>
           </motion.div>
         </div>
