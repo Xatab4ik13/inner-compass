@@ -101,7 +101,7 @@ const AboutSection = () => {
               </div>
             </div>
 
-            {/* B17 Link - more visible */}
+            {/* B17 Link - B17 brand colors */}
             <motion.a
               href="https://www.b17.ru/id1104041/"
               target="_blank"
@@ -109,18 +109,18 @@ const AboutSection = () => {
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.4, delay: 0.5 }}
-              className="mt-8 inline-flex items-center gap-4 px-6 py-4 bg-white border-2 border-taupe/40 hover:border-olive/60 hover:shadow-soft transition-all duration-300 group"
+              className="mt-8 inline-flex items-center gap-4 px-6 py-4 bg-[#5c7085] hover:bg-[#4a5d6f] transition-all duration-300 group shadow-soft"
             >
-              <img src={b17Logo} alt="B17.ru" className="h-12 w-auto" />
+              <img src={b17Logo} alt="B17.ru" className="h-12 w-auto brightness-0 invert" />
               <div className="flex flex-col">
-                <span className="font-display text-base text-deep-brown font-medium">
+                <span className="font-display text-base text-white font-medium">
                   Профиль на B17.ru
                 </span>
-                <span className="font-body text-xs text-taupe">
+                <span className="font-body text-xs text-white/70">
                   Отзывы и рейтинг
                 </span>
               </div>
-              <ExternalLink size={18} className="text-deep-brown ml-2" />
+              <ExternalLink size={18} className="text-white ml-2" />
             </motion.a>
           </motion.div>
         </div>
