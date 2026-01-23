@@ -28,12 +28,12 @@ const AboutSection = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-14 items-center">
-          {/* Image */}
+          {/* Image - shows first on mobile */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative order-2 lg:order-1"
+            className="relative"
           >
             <div className="relative max-w-md mx-auto lg:mx-0">
               {/* Elegant double frame */}
@@ -58,13 +58,20 @@ const AboutSection = () => {
             </div>
           </motion.div>
 
-          {/* Content */}
+          {/* Content - shows second on mobile */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="order-1 lg:order-2"
           >
+            {/* Quote first on mobile view */}
+            <div className="lg:hidden pb-6 mb-6 border-b border-border">
+              <p className="font-display text-xl md:text-2xl text-olive italic leading-relaxed">
+                "Для меня лучший показатель эффективности — ваши изменения и отклики о том, 
+                как трансформируется ваша жизнь."
+              </p>
+            </div>
+
             <div className="space-y-6">
               <p className="font-body text-lg md:text-xl text-foreground leading-relaxed">
                 Я дипломированный магистр психологии, клинический психолог. 
@@ -80,7 +87,8 @@ const AboutSection = () => {
                 становятся ощутимы уже после нашей первой встречи.
               </p>
               
-              <div className="pt-6 border-t border-border">
+              {/* Quote shown only on desktop */}
+              <div className="hidden lg:block pt-6 border-t border-border">
                 <p className="font-display text-xl md:text-2xl text-olive italic leading-relaxed">
                   "Для меня лучший показатель эффективности — ваши изменения и отклики о том, 
                   как трансформируется ваша жизнь."
