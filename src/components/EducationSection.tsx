@@ -41,7 +41,7 @@ const DiplomaCard = memo(({ diploma, onClick }: { diploma: typeof diplomas[0]; o
   >
     <div className="relative p-2 bg-gradient-to-br from-sand via-cream to-sand border border-taupe/30 shadow-soft hover:shadow-card transition-shadow duration-300">
       <div className="relative border border-taupe/20 p-1 bg-cream/50">
-        <div className="aspect-[4/3] overflow-hidden bg-muted/20">
+        <div className="aspect-[3/4] overflow-hidden bg-muted/20">
           <img
             src={diploma.src}
             alt={diploma.alt}
