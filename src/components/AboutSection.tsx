@@ -3,6 +3,7 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { ExternalLink } from "lucide-react";
 import psychologistImage from "@/assets/psychologist-2.jpg";
+import b17Logo from "@/assets/b17-logo.png";
 
 const AboutSection = () => {
   const ref = useRef(null);
@@ -98,12 +99,13 @@ const AboutSection = () => {
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.4, delay: 0.5 }}
-              className="mt-8 inline-flex items-center gap-2 font-body text-base text-olive hover:text-deep-brown transition-colors group"
+              className="mt-8 inline-flex items-center gap-3 px-5 py-3 bg-sand border border-taupe/30 hover:bg-taupe/20 transition-colors group"
             >
-              <span className="border-b border-olive/50 group-hover:border-deep-brown transition-colors">
+              <img src={b17Logo} alt="B17.ru" className="h-8 w-auto" />
+              <span className="font-body text-base text-deep-brown group-hover:text-olive transition-colors">
                 Профиль на B17.ru
               </span>
-              <ExternalLink size={16} />
+              <ExternalLink size={16} className="text-olive" />
             </motion.a>
           </motion.div>
         </div>

@@ -1,9 +1,10 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ExternalLink } from "lucide-react";
+import bookCover1 from "@/assets/book-cover-1.jpg";
 
 const books = [
-  { id: 1, title: "Книга автора", url: "https://www.litres.ru/72726073/", coverUrl: "https://cv7.litres.ru/pub/c/cover/72726073.webp" },
+  { id: 1, title: "Ничья судьба", url: "https://www.litres.ru/72726073/", coverUrl: bookCover1 },
   { id: 2, title: "Книга автора", url: "https://www.litres.ru/71094397/", coverUrl: "https://cv7.litres.ru/pub/c/cover/71094397.webp" },
   { id: 3, title: "Парадокс гениальности", url: "https://www.litres.ru/book/oleg-pet/paradoks-genialnosti-72485728/", coverUrl: "https://cv7.litres.ru/pub/c/cover/72485728.webp" },
   { id: 4, title: "Сага о пилоте Делириум", url: "https://www.litres.ru/book/oleg-pet/saga-o-pilote-delirium-70823029/", coverUrl: "https://cv7.litres.ru/pub/c/cover/70823029.webp" },
