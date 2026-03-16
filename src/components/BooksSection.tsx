@@ -8,6 +8,7 @@ import bookCover4 from "@/assets/book-cover-4.jpg";
 import bookCover5 from "@/assets/book-cover-5.jpg";
 import bookCover6 from "@/assets/book-cover-6.webp";
 import bookCover7 from "@/assets/book-cover-7.jpg";
+import bookCover8 from "@/assets/book-cover-8.webp";
 
 const books = [
   { id: 1, title: "Ничья судьба", url: "https://www.litres.ru/72726073/", coverUrl: bookCover1 },
@@ -17,6 +18,7 @@ const books = [
   { id: 5, title: "Время жить и время выбирать", url: "https://www.litres.ru/book/oleg-pet/vremya-zhit-i-vremya-vybirat-72721630/", coverUrl: bookCover5 },
   { id: 6, title: "Женщина, которую звали Королева", url: "https://www.litres.ru/book/oleg-pet/zhenschina-kotoruu-zvali-koroleva-73308214/", coverUrl: bookCover6 },
   { id: 7, title: "Вчера эта история была правдой", url: "https://litres.ru/73475187", coverUrl: bookCover7 },
+  { id: 8, title: "Избранное. Про любовь", url: "https://www.litres.ru/book/oleg-pet/izbrannoe-pro-lubov-73523407/", coverUrl: bookCover8 },
 ];
 
 const BooksSection = () => {
