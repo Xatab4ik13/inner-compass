@@ -2,6 +2,9 @@ import articleFetishImage from "@/assets/article-fetish.jpg";
 import articleOedipusImage from "@/assets/article-oedipus.jpg";
 import articleSwallowImage from "@/assets/article-swallow.jpg";
 import articleAnorexiaImage from "@/assets/article-anorexia.jpg";
+import articleMelancholiaImage from "@/assets/article-melancholia.jpg";
+import articlePanicImage from "@/assets/article-panic.jpg";
+import articleJokerImage from "@/assets/article-joker.jpg";
 
 export interface Article {
   slug: string;
