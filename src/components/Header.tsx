@@ -105,10 +105,6 @@ const Header = () => {
           >
             Олег Петрович
           </a>
-            className="font-display text-xl md:text-2xl font-medium text-deep-brown"
-          >
-            Олег Петрович
-          </a>
 
           <nav className="hidden lg:flex items-center gap-8">
             {navItems.map((item) => (
@@ -180,7 +176,7 @@ const Header = () => {
                   <a
                     key={item.href}
                     href={item.href}
-                    onClick={(e) => handleMobileNavClick(e, item.href)}
+                    onClick={(e) => handleMobileNavClick(e, item.href, (item as { isRoute?: boolean }).isRoute)}
                     className="font-body text-sm text-foreground/80 hover:text-deep-brown transition-colors duration-200 py-2"
                   >
                     {item.label}
