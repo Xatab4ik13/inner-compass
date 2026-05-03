@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const navItems = [
   { href: "#help", label: "Помощь" },
@@ -9,6 +10,7 @@ const navItems = [
   { href: "#methods", label: "Методы" },
   { href: "#results", label: "Результаты" },
   { href: "#books", label: "Книги" },
+  { href: "/articles", label: "Статьи", isRoute: true as const },
   { href: "#pricing", label: "Стоимость" },
   { href: "#contacts", label: "Контакты" },
 ];
