@@ -115,7 +115,7 @@ const Header = () => {
               <a
                 key={item.href}
                 href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
+                onClick={(e) => handleNavClick(e, item.href, (item as { isRoute?: boolean }).isRoute)}
                 className="font-body text-xs tracking-wide text-foreground/70 hover:text-deep-brown transition-colors duration-200 uppercase"
               >
                 {item.label}
