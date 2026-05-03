@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const navItems = [
   { href: "#help", label: "Помощь" },
@@ -9,6 +10,7 @@ const navItems = [
   { href: "#methods", label: "Методы" },
   { href: "#results", label: "Результаты" },
   { href: "#books", label: "Книги" },
+  { href: "/articles", label: "Статьи", isRoute: true as const },
   { href: "#pricing", label: "Стоимость" },
   { href: "#contacts", label: "Контакты" },
 ];
@@ -16,6 +18,8 @@ const navItems = [
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,28 +35,52 @@ const Header = () => {
       const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - headerOffset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
     }
   }, []);
 
-  const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const sectionId = href.replace("#", "");
-    scrollToSection(sectionId);
-  }, [scrollToSection]);
-
-  const handleMobileNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    setIsMobileMenuOpen(false);
-    const sectionId = href.replace("#", "");
-    // Delay scroll to allow menu to close
-    setTimeout(() => {
+  const handleNavClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, href: string, isRoute?: boolean) => {
+      e.preventDefault();
+      if (isRoute) {
+        navigate(href);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
+      const sectionId = href.replace("#", "");
+      if (location.pathname !== "/") {
+        navigate(`/#${sectionId}`);
+        setTimeout(() => scrollToSection(sectionId), 200);
+        return;
+      }
       scrollToSection(sectionId);
-    }, 100);
-  }, [scrollToSection]);
+    },
+    [scrollToSection, location.pathname, navigate],
+  );
+
+  const handleMobileNavClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, href: string, isRoute?: boolean) => {
+      e.preventDefault();
+      setIsMobileMenuOpen(false);
+      if (isRoute) {
+        setTimeout(() => {
+          navigate(href);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 100);
+        return;
+      }
+      const sectionId = href.replace("#", "");
+      setTimeout(() => {
+        if (location.pathname !== "/") {
+          navigate(`/#${sectionId}`);
+          setTimeout(() => scrollToSection(sectionId), 200);
+        } else {
+          scrollToSection(sectionId);
+        }
+      }, 100);
+    },
+    [scrollToSection, location.pathname, navigate],
+  );
 
   return (
     <header
@@ -64,10 +92,13 @@ const Header = () => {
     >
       <div className="container-wide px-4 md:px-8">
         <div className="flex items-center justify-between">
-          <a 
-            href="#" 
+          <a
+            href="#"
             onClick={(e) => {
               e.preventDefault();
+              if (location.pathname !== "/") {
+                navigate("/");
+              }
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
             className="font-display text-xl md:text-2xl font-medium text-deep-brown"
@@ -80,7 +111,7 @@ const Header = () => {
               <a
                 key={item.href}
                 href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
+                onClick={(e) => handleNavClick(e, item.href, (item as { isRoute?: boolean }).isRoute)}
                 className="font-body text-xs tracking-wide text-foreground/70 hover:text-deep-brown transition-colors duration-200 uppercase"
               >
                 {item.label}
@@ -145,7 +176,7 @@ const Header = () => {
                   <a
                     key={item.href}
                     href={item.href}
-                    onClick={(e) => handleMobileNavClick(e, item.href)}
+                    onClick={(e) => handleMobileNavClick(e, item.href, (item as { isRoute?: boolean }).isRoute)}
                     className="font-body text-sm text-foreground/80 hover:text-deep-brown transition-colors duration-200 py-2"
                   >
                     {item.label}
