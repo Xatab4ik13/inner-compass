@@ -1,5 +1,7 @@
 import articleFetishImage from "@/assets/article-fetish.jpg";
 import articleOedipusImage from "@/assets/article-oedipus.jpg";
+import articleSwallowImage from "@/assets/article-swallow.jpg";
+import articleAnorexiaImage from "@/assets/article-anorexia.jpg";
 
 export interface Article {
   slug: string;
