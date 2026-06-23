@@ -9,6 +9,10 @@ import bookCover5 from "@/assets/book-cover-5.jpg";
 import bookCover6 from "@/assets/book-cover-6.webp";
 import bookCover7 from "@/assets/book-cover-7.jpg";
 import bookCover8 from "@/assets/book-cover-8.webp";
+import bookCover9 from "@/assets/book-cover-9.jpg";
+import bookCover10 from "@/assets/book-cover-10.jpg";
+import bookCover11 from "@/assets/book-cover-11.jpg";
+import bookCover12 from "@/assets/book-cover-12.jpg";
 
 const books = [
   { id: 1, title: "Ничья судьба", url: "https://www.litres.ru/72726073/", coverUrl: bookCover1 },
@@ -19,6 +23,10 @@ const books = [
   { id: 6, title: "Женщина, которую звали Королева", url: "https://www.litres.ru/book/oleg-pet/zhenschina-kotoruu-zvali-koroleva-73308214/", coverUrl: bookCover6 },
   { id: 7, title: "Вчера эта история была правдой", url: "https://litres.ru/73475187", coverUrl: bookCover7 },
   { id: 8, title: "Избранное. Про любовь", url: "https://www.litres.ru/book/oleg-pet/izbrannoe-pro-lubov-73523407/", coverUrl: bookCover8 },
+  { id: 9, title: "Время верить", url: "https://www.litres.ru/book/oleg-pet/vremya-verit-74074764/", coverUrl: bookCover9 },
+  { id: 10, title: "Жди меня. История одной собаки", url: "https://www.litres.ru/book/oleg-pet/zhdi-menya-istoriya-odnoy-sobaki-74042753/", coverUrl: bookCover10 },
+  { id: 11, title: "Неделя", url: "https://www.litres.ru/book/oleg-pet/nedelya-74051184/", coverUrl: bookCover11 },
+  { id: 12, title: "Бесконечный анализ бессознательного", url: "https://www.litres.ru/book/oleg-pet/beskonechnyy-analiz-bessoznatelnogo-73986184/", coverUrl: bookCover12 },
 ];
 
 const BooksSection = () => {
